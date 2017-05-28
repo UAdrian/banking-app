@@ -19,8 +19,6 @@ public class DashboardController implements Initializable {
   @FXML
   private Label userLbl;
   @FXML
-  private BorderPane accInfo;
-  @FXML
   private Stage window;
 
   public void logOut(ActionEvent event) throws Exception {
@@ -34,8 +32,32 @@ public class DashboardController implements Initializable {
   }
 
   public void goAccountInfo(ActionEvent event) throws Exception {
-    accInfo = (BorderPane) FXMLLoader.load(getClass().getResource("/application/Dashboard.fxml"));
+    BorderPane accInfo = (BorderPane) FXMLLoader.load(getClass().getResource("/application/Dashboard.fxml"));
     Pane center = (Pane) FXMLLoader.load(getClass().getResource("/application/AccInfo.fxml"));
+    accInfo.setPadding(new Insets(5, 5, 5, 5));
+    accInfo.setCenter(center);
+    ((Node) event.getSource()).getScene().setRoot(accInfo);
+  }
+
+  public void goToTransaction(ActionEvent event) throws Exception {
+    BorderPane accInfo = (BorderPane) FXMLLoader.load(getClass().getResource("/application/Dashboard.fxml"));
+    Pane center = (Pane) FXMLLoader.load(getClass().getResource("/application/Transaction.fxml"));
+    accInfo.setPadding(new Insets(5, 5, 5, 5));
+    accInfo.setCenter(center);
+    ((Node) event.getSource()).getScene().setRoot(accInfo);
+  }
+
+  public void goToBills(ActionEvent event) throws Exception {
+    BorderPane accInfo = (BorderPane) FXMLLoader.load(getClass().getResource("/application/Dashboard.fxml"));
+    Pane center = (Pane) FXMLLoader.load(getClass().getResource("/application/Bills.fxml"));
+    accInfo.setPadding(new Insets(5, 5, 5, 5));
+    accInfo.setCenter(center);
+    ((Node) event.getSource()).getScene().setRoot(accInfo);
+  }
+
+  public void goToHistory(ActionEvent event) throws Exception {
+    BorderPane accInfo = (BorderPane) FXMLLoader.load(getClass().getResource("/application/Dashboard.fxml"));
+    Pane center = (Pane) FXMLLoader.load(getClass().getResource("/application/History.fxml"));
     accInfo.setPadding(new Insets(5, 5, 5, 5));
     accInfo.setCenter(center);
     ((Node) event.getSource()).getScene().setRoot(accInfo);

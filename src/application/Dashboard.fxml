@@ -73,17 +73,17 @@
                <font>
                   <Font size="18.0" />
                </font></Button>
-            <Button layoutX="19.0" layoutY="65.0" mnemonicParsing="false" onAction="#goAccountInfo" prefHeight="40.0" prefWidth="135.0" text="Transaction" textAlignment="CENTER" wrapText="true">
+            <Button layoutX="19.0" layoutY="65.0" mnemonicParsing="false" onAction="#goToTransaction" prefHeight="40.0" prefWidth="135.0" text="Transaction" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button layoutX="19.0" layoutY="165.0" mnemonicParsing="false" onAction="#goAccountInfo" prefHeight="40.0" prefWidth="135.0" text="History" textAlignment="CENTER" wrapText="true">
+            <Button layoutX="19.0" layoutY="165.0" mnemonicParsing="false" onAction="#goToHistory" prefHeight="40.0" prefWidth="135.0" text="History" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button layoutX="19.0" layoutY="115.0" mnemonicParsing="false" onAction="#goAccountInfo" prefHeight="40.0" prefWidth="135.0" text="Pay Bills" textAlignment="CENTER" wrapText="true">
+            <Button layoutX="19.0" layoutY="115.0" mnemonicParsing="false" onAction="#goToBills" prefHeight="40.0" prefWidth="135.0" text="Pay Bills" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="18.0" />
                </font>
