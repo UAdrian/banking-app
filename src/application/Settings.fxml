@@ -6,7 +6,7 @@
 
 <Pane prefHeight="652.0" prefWidth="630.0" styleClass="pane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SettingsController">
    <children>
-      <Label layoutX="231.0" layoutY="154.0" text="Settings" textFill="WHITE">
+      <Label layoutX="231.0" layoutY="154.0" text="Settings to be added in a future update!" textFill="WHITE">
          <font>
             <Font size="33.0" />
          </font>
