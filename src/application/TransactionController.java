@@ -16,22 +16,26 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class TransactionController implements Initializable {
-  @FXML
-  private TextField sendAcc;
-  @FXML
-  private TextField sum;
-  @FXML
-  private TextField acc;
-  @FXML
-  TextField details;
-  @FXML
-  TextField name;
-  @FXML
-  private Button done;
-  @FXML
-  private Label status;
+	@FXML
+	private TextField sendAcc;
+	@FXML
+	private TextField sum;
+	@FXML
+	private TextField acc;
+	@FXML
+	TextField details;
+	@FXML
+	TextField name;
+	@FXML
+	private Button done;
+	@FXML
+	private Label status;
 
-  public void transfer(ActionEvent event) {
+	public void transfer(ActionEvent event) {
+		if (sum.getText().isEmpty()) {
+			status.setText("Amount to be sent is empty!");
+			done.setDisable(true);
+		}
 		if (acc.getText().isEmpty()) {
 			status.setText("Invalid account number!");
 			done.setDisable(true);
@@ -42,48 +46,51 @@ public class TransactionController implements Initializable {
 				App.transfer(Account.getCustId(), acc.getText(), Double.parseDouble(sum.getText()));
 				status.setText("Transfer succesfull!");
 				new Account(App.acess(Account.getCustId()));
-				App.
+				App.logger(Account.getCustId(), "Transaction to " + acc.getText() + " for " + sum.getText()
+						+ ". Details - " + details.getText() + " for " + name.getText());
+				sum.clear();
+				acc.clear();
+				details.clear();
+				name.clear();
+
 			}
 		}
-		if (sum.getText().isEmpty()) {
-			status.setText("Amount to be sent is empty!");
-			done.setDisable(true);
-		}
+
 	}
 
-  @Override
-  public void initialize(URL location, ResourceBundle resources) {
-    sendAcc.setText(Account.getCustId());
-    sum.textProperty().addListener(new ChangeListener<String>() {
-      @Override
-      public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-        if (!newValue.matches("\\d*")) {
-          sum.setText(newValue.replaceAll("[^\\d]", ""));
-        }
-        if (!sum.getText().isEmpty()) {
-          done.setDisable(false);
-          status.setText("");
-        }
-      }
-    });
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		sendAcc.setText(Account.getCustId());
+		sum.textProperty().addListener(new ChangeListener<String>() {
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				if (!newValue.matches("\\d*")) {
+					sum.setText(newValue.replaceAll("[^\\d]", ""));
+				}
+				if (!sum.getText().isEmpty()) {
+					done.setDisable(false);
+					status.setText("");
+				}
+			}
+		});
 
-    acc.textProperty().addListener(new ChangeListener<String>() {
-      @Override
-      public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
-        if (acc.getText().equals(Account.getCustId())) {
-          status.setText("You can't send money to yourself!");
-          done.setDisable(true);
-        } else {
-          done.setDisable(false);
-          status.setText("");
-        }
+		acc.textProperty().addListener(new ChangeListener<String>() {
+			@Override
+			public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+				if (acc.getText().equals(Account.getCustId())) {
+					status.setText("You can't send money to yourself!");
+					done.setDisable(true);
+				} else {
+					done.setDisable(false);
+					status.setText("");
+				}
 
-        int maxLength = 19;
-        if (acc.getText().length() > maxLength) {
-          String s = acc.getText().substring(0, maxLength);
-          acc.setText(s);
-        }
-      }
-    });
-  }
+				int maxLength = 19;
+				if (acc.getText().length() > maxLength) {
+					String s = acc.getText().substring(0, maxLength);
+					acc.setText(s);
+				}
+			}
+		});
+	}
 }
