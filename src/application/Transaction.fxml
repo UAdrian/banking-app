@@ -78,7 +78,7 @@
                   <Font size="24.0" />
                </font>
             </TextField>
-            <TextField prefHeight="59.0" prefWidth="448.0" promptText="Name of the account owner" styleClass="custom-pane" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="name" prefHeight="59.0" prefWidth="448.0" promptText="Name of the account owner" styleClass="custom-pane" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font size="24.0" />
                </font>
@@ -88,7 +88,7 @@
                   <Font size="24.0" />
                </font>
             </TextField>
-            <TextField prefHeight="59.0" prefWidth="448.0" promptText="Small description" styleClass="custom-pane" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <TextField fx:id="details" prefHeight="59.0" prefWidth="448.0" promptText="Small description" styleClass="custom-pane" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font size="24.0" />
                </font>
