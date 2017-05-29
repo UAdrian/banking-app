@@ -2,18 +2,72 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="652" prefWidth="630" styleClass="pane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AccInfoController">
+<Pane prefHeight="652" prefWidth="718.0" styleClass="pane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AccInfoController">
    <opaqueInsets>
       <Insets bottom="5.0" right="5.0" />
    </opaqueInsets>
    <children>
-      <Label layoutX="84.0" layoutY="134.0" prefHeight="106.0" prefWidth="195.0" text="Label" textFill="WHITE">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
+      <GridPane layoutX="21.0" layoutY="187.0" prefHeight="279.0" prefWidth="676.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="307.0" minWidth="10.0" prefWidth="244.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="368.0" minWidth="10.0" prefWidth="355.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="90.0" minHeight="10.0" prefHeight="89.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="91.0" minHeight="10.0" prefHeight="91.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Pane styleClass="custom-pane" GridPane.rowIndex="1">
+               <children>
+                  <Label layoutX="14.0" prefHeight="90.0" prefWidth="264.0" text="Account number:" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane styleClass="custom-pane" GridPane.rowIndex="2">
+               <children>
+                  <Label layoutX="14.0" prefHeight="91.0" prefWidth="270.0" text="Account balance:" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <TextField fx:id="type" editable="false" prefHeight="66.0" prefWidth="422.0" styleClass="custom-pane" GridPane.columnIndex="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="number" editable="false" prefHeight="66.0" prefWidth="358.0" styleClass="custom-pane" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="balance" editable="false" prefHeight="66.0" prefWidth="286.0" styleClass="custom-pane" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <Pane styleClass="custom-pane">
+               <children>
+                  <Label contentDisplay="CENTER" layoutX="14.0" layoutY="-4.0" prefHeight="107.0" prefWidth="264.0" text="Account type:" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
    </children>
 </Pane>

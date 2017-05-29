@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DashboardController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DashboardController">
    <top>
       <HBox prefHeight="50.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox prefHeight="50.0" prefWidth="580.0">
+            <HBox prefHeight="59.0" prefWidth="683.0">
                <children>
                   <ImageView fitHeight="44.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -25,7 +25,7 @@
                         <Insets left="10.0" right="5.0" top="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <Label fx:id="userLbl" prefHeight="39.0" prefWidth="397.0" textFill="#4a96ad">
+                  <Label fx:id="userLbl" prefHeight="40.0" prefWidth="490.0" textFill="#4a96ad">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -47,7 +47,7 @@
                   <Insets right="10.0" />
                </padding>
             </HBox>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Settings" textAlignment="JUSTIFY" wrapText="true">
+            <Button mnemonicParsing="false" onAction="#goToSettings" prefHeight="40.0" prefWidth="100.0" text="Settings" textAlignment="JUSTIFY" wrapText="true">
                <font>
                   <Font size="18.0" />
                </font>
@@ -55,7 +55,7 @@
                   <Insets bottom="10.0" right="10.0" top="10.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Help" textAlignment="JUSTIFY" wrapText="true">
+            <Button mnemonicParsing="false" onAction="#goToHelp" prefHeight="40.0" prefWidth="100.0" text="Help" textAlignment="JUSTIFY" wrapText="true">
                <font>
                   <Font size="18.0" />
                </font>
@@ -78,12 +78,12 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button layoutX="19.0" layoutY="165.0" mnemonicParsing="false" onAction="#goToHistory" prefHeight="40.0" prefWidth="135.0" text="History" textAlignment="CENTER" wrapText="true">
+            <Button layoutX="19.0" layoutY="115.0" mnemonicParsing="false" onAction="#goToHistory" prefHeight="40.0" prefWidth="135.0" text="History" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button layoutX="19.0" layoutY="115.0" mnemonicParsing="false" onAction="#goToBills" prefHeight="40.0" prefWidth="135.0" text="Pay Bills" textAlignment="CENTER" wrapText="true">
+            <Button fx:id="admin" layoutX="19.0" layoutY="165.0" mnemonicParsing="false" onAction="#goToAdmin" prefHeight="40.0" prefWidth="135.0" text="Admin" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="18.0" />
                </font>
@@ -94,10 +94,6 @@
          </BorderPane.margin></Pane>
    </left>
    <center>
-      <Pane prefHeight="652.0" prefWidth="630.0" styleClass="pane" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets />
-         </BorderPane.margin>
-      </Pane>
+      <Pane prefHeight="741.0" prefWidth="718.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>

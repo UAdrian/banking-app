@@ -20,3 +20,22 @@
      -fx-background-radius: 10;
      -fx-effect: dropshadow(three-pass-box, black, 10, 0, 0, 0);
 }
+
+.table {
+	-fx-background-color: #F5F3EE;
+	-fx-text-fill: #4A96AD;
+}
+
+.table-view .column-header,
+.table-view .column-header .filler,
+.table-view .column-header-background .filler {
+    -fx-background-color: #4A96AD;
+}
+
+.custom-pane {
+	-fx-background-color: #4A96AD;
+     -fx-background-insets: 5;
+     -fx-background-radius: 10;
+     -fx-effect: dropshadow(three-pass-box, black, 10, 0, 0, 0);
+     -fx-text-alignment: center;
+}
