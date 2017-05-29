@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import classes.Account;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -24,6 +25,19 @@ public class TransactionController implements Initializable {
   @FXML
   private Label status;
 
+  public void transfer(ActionEvent event) {
+    if (acc.getText().length() < 19 || acc.getText().isEmpty()) {
+      status.setText("Invalid account number!");
+      done.setDisable(true);
+    } else {
+      // verify if it exists
+    }
+    if (sum.getText().isEmpty()) {
+      status.setText("Amount to be sent is empty!");
+      done.setDisable(true);
+    }
+  }
+
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     sendAcc.setText(Account.getNumber());
@@ -32,6 +46,10 @@ public class TransactionController implements Initializable {
       public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
         if (!newValue.matches("\\d*")) {
           sum.setText(newValue.replaceAll("[^\\d]", ""));
+        }
+        if (!sum.getText().isEmpty()) {
+          done.setDisable(false);
+          status.setText("");
         }
       }
     });

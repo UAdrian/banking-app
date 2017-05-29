@@ -100,7 +100,7 @@
             </TextField>
          </children>
       </GridPane>
-      <Button fx:id="done" layoutX="315.0" layoutY="552.0" mnemonicParsing="false" text="DONE">
+      <Button fx:id="done" layoutX="305.0" layoutY="552.0" mnemonicParsing="false" onAction="#transfer" text="Transfer">
          <font>
             <Font size="24.0" />
          </font>

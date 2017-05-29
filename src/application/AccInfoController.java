@@ -16,12 +16,15 @@ public class AccInfoController implements Initializable {
   private TextField number;
   @FXML
   private TextField balance;
+  @FXML
+  private TextField email;
 
   @Override
   public void initialize(URL arg0, ResourceBundle arg1) {
     type.setText(Account.getType());
     number.setText(Account.getNumber());
     balance.setText(Account.getBalance() + " RON");
+    email.setText("something@yahhoo.com");
   }
 
 }

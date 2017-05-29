@@ -14,20 +14,21 @@
       <Insets bottom="5.0" right="5.0" />
    </opaqueInsets>
    <children>
-      <GridPane layoutX="21.0" layoutY="187.0" prefHeight="279.0" prefWidth="676.0">
+      <GridPane layoutX="21.0" layoutY="187.0" prefHeight="362.0" prefWidth="676.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="307.0" minWidth="10.0" prefWidth="244.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="368.0" minWidth="10.0" prefWidth="355.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="307.0" minWidth="10.0" prefWidth="248.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="427.0" minWidth="10.0" prefWidth="427.0" />
         </columnConstraints>
         <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="90.0" minHeight="10.0" prefHeight="89.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="91.0" minHeight="10.0" prefHeight="91.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="91.0" minHeight="10.0" prefHeight="91.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Pane styleClass="custom-pane" GridPane.rowIndex="1">
                <children>
-                  <Label layoutX="14.0" prefHeight="90.0" prefWidth="264.0" text="Account number:" textAlignment="CENTER" textFill="WHITE">
+                  <Label layoutX="14.0" prefHeight="90.0" prefWidth="264.0" text="Account number" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font size="30.0" />
                      </font>
@@ -36,7 +37,7 @@
             </Pane>
             <Pane styleClass="custom-pane" GridPane.rowIndex="2">
                <children>
-                  <Label layoutX="14.0" prefHeight="91.0" prefWidth="270.0" text="Account balance:" textAlignment="CENTER" textFill="WHITE">
+                  <Label layoutX="14.0" prefHeight="91.0" prefWidth="270.0" text="Account balance" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font size="30.0" />
                      </font>
@@ -60,13 +61,27 @@
             </TextField>
             <Pane styleClass="custom-pane">
                <children>
-                  <Label contentDisplay="CENTER" layoutX="14.0" layoutY="-4.0" prefHeight="107.0" prefWidth="264.0" text="Account type:" textAlignment="CENTER" textFill="WHITE">
+                  <Label contentDisplay="CENTER" layoutX="22.0" layoutY="-4.0" prefHeight="107.0" prefWidth="264.0" text="Account owner" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font size="30.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
+            <Pane styleClass="custom-pane" GridPane.rowIndex="3">
+               <children>
+                  <Label layoutX="14.0" prefHeight="91.0" prefWidth="270.0" text="User email" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <TextField fx:id="email" editable="false" prefHeight="66.0" prefWidth="286.0" styleClass="custom-pane" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
          </children>
       </GridPane>
    </children>
